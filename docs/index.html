@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="/client.bundle.js"></script>
+    <div style="min-height: 400px">
+      <h2>SSIC Search Widget</h2>
+      <form>
+        <fieldset style="display: flex; flex-direction: column">
+          <legend>Send Events</legend>
+          <input style="margin: 16px" type="button" value="sendInit" onclick="channel.sendInit()" />
+          <input style="margin: 16px" type="button" value="sendReady" onclick="channel.sendReady()" />
+          <input style="margin: 16px" type="button" value="sendData" onclick="channel.sendData({message: 'selected codes: 1034, 1035', data: ['1034', '1035']})" />
+          <input style="margin: 16px" type="button" value="sendClose" onclick="channel.sendClose()" />
+        </fieldset>
+      </form>
+    </div>
+    <script>
+      const channel = window.widgetChannel;
+    </script>
+  </body>
+</html>
